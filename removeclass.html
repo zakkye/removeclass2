@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>remove class</title>
+</head>
+
+<body class="test test-b a-test test">
+<script>
+function removeClass(elem, cls) {
+	var re_Class = new RegExp('(?:^|\\s+)'+ cls +'(?=(?:\\s+|$))','g'),
+		re_trim = /^\s+|\s+$/g;
+	elem.className = elem.className.replace(re_Class,'').replace(re_trim,'');
+}
+var body = document.body;
+document.write('old class:  ' + body.className + '<br />');
+removeClass(body,'test');
+document.write('new class:  ' + body.className);
+</script>
+</body>
+</html>
